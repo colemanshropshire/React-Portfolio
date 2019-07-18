@@ -72,10 +72,18 @@ export default class PortfolioForm extends Component {
     formData.append("portfolio_item[description]", this.state.description);
     formData.append("portfolio_item[url]", this.state.url);
     formData.append("portfolio_item[category]", this.state.category);
-    formData.append("portfolio_item[position]", this.state.postion);
+    formData.append("portfolio_item[position]", this.state.position);
 
     if (this.state.thumb_image) {
       formData.append("portfolio_item[thumb_image]", this.state.thumb_image);
+    }
+
+    if (this.state.banner_image) {
+      formData.append("portfolio_item[banner_image]", this.state.banner_image);
+    }
+
+    if (this.state.logo) {
+      formData.append("portfolio_item[logo]", this.state.logo);
     }
 
     return formData;
@@ -122,7 +130,7 @@ export default class PortfolioForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="portfolio-form-wrapper">
-        <div>
+        <div className="two-column">
           <input
             type="text"
             name="name"
@@ -138,9 +146,9 @@ export default class PortfolioForm extends Component {
             onChange={this.handleChange}
           />
         </div>
-        <div>
+        <div className="two-column">
           <input
-            type="text"
+            type="number"
             name="position"
             placeholder="Position"
             value={this.state.position}
@@ -157,7 +165,7 @@ export default class PortfolioForm extends Component {
             <option value="Styling">Styling</option>
           </select>
         </div>
-        <div>
+        <div className="one-column">
           <textarea
             type="text"
             name="description"
@@ -167,29 +175,37 @@ export default class PortfolioForm extends Component {
           />
         </div>
 
-        <div className="image-uploaders">
+        <div className="image-uploaders three-column">
           <DropzoneComponent
             ref={this.thumbRef}
             config={this.componentConfig()}
             djsConfig={this.djsConfig()}
             eventHandlers={this.handleThumbDrop()}
-          />
+          >
+            <div className="dz-message">Thumnail</div>
+          </DropzoneComponent>
           <DropzoneComponent
             ref={this.bannerRef}
             config={this.componentConfig()}
             djsConfig={this.djsConfig()}
             eventHandlers={this.handleBannerDrop()}
-          />
+          >
+            <div className="dz-message">Banner</div>
+          </DropzoneComponent>
           <DropzoneComponent
             ref={this.logoRef}
             config={this.componentConfig()}
             djsConfig={this.djsConfig()}
             eventHandlers={this.handleLogoDrop()}
-          />
+          >
+            <div className="dz-message">Logo</div>
+          </DropzoneComponent>
         </div>
 
         <div>
-          <button type="submit">Save</button>
+          <button className="btn" type="submit">
+            Save
+          </button>
         </div>
       </form>
     );

@@ -6,8 +6,27 @@
       width: 100%;
     }
 
-    .title {
-      color: $offwhite;
+    .text-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .title {
+        color: $offwhite;
+        font-size: 1.5em;
+        font-weight: normal;
+      }
+
+      .delete-icon {
+        cursor: pointer;
+        color: $offwhite;
+        font-size: 1.5em;
+        transition: 500ms ease-in-out;
+
+        &:hover {
+          color: $warning;
+        }
+      }
     }
   }
 }

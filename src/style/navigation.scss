@@ -4,6 +4,19 @@
   padding: 30px;
   text-transform: uppercase;
 
+  .right-side {
+    a {
+      margin-left: 15px;
+      cursor: pointer;
+      color: $teal;
+      transition: 500ms ease-in-out;
+
+      &:hover {
+        color: $dark-teal;
+      }
+    }
+  }
+
   .left-side {
     display: flex;
     height: 24px;
