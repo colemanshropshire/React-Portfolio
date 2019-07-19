@@ -33,6 +33,24 @@ export default class PortfolioForm extends Component {
     this.logoRef = React.createRef();
   }
 
+  componentDidUpdate() {
+    if (Object.keys(this.props.portfolioToEdit).length > 0) {
+      const {
+        id,
+        name,
+        description,
+        category,
+        position,
+        url,
+        thumb_image_url,
+        banner_image_url,
+        logo_url
+      } = this.props.portfolioToEdit;
+
+      this.props.clearPortfolioToEdit();
+    }
+  }
+
   handleThumbDrop() {
     return {
       addedfile: file => this.setState({ thumb_image: file })
