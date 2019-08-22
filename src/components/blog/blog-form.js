@@ -13,6 +13,13 @@ export default class BlogForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  buildForm() {
+    let formData = new FormData();
+
+    formData.append("portfolio_blog[title]", this.state.title);
+    formData.append("portfolio_blog[blog_status]", this.state.blog_status);
+  }
+
   handleSubmit(event) {
     this.props.handleSuccessfulFormSubmission(this.state);
     event.preventDefault();
