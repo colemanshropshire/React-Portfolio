@@ -4,7 +4,10 @@ import {
   faEdit,
   faCalendarTimes,
   faSpinner,
-  faPlusCircle
+  faPlusCircle,
+  faPhoneAlt,
+  faEnvelopeOpenText,
+  faMapMarkedAlt
 } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
@@ -15,7 +18,10 @@ const Icons = () => {
     faEdit,
     faCalendarTimes,
     faSpinner,
-    faPlusCircle
+    faPlusCircle,
+    faPhoneAlt,
+    faEnvelopeOpenText,
+    faMapMarkedAlt
   );
 };
 
