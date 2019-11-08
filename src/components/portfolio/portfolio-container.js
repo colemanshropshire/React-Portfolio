@@ -53,18 +53,25 @@ export default class PortfolioContainer extends Component {
     }
 
     return (
-      <div className="portfolio-items-wrapper">
-        <button className="btn" onClick={() => this.handleFilter("Markup")}>
-          Markup
-        </button>
-        <button className="btn" onClick={() => this.handleFilter("Styling")}>
-          Styling
-        </button>
-        <button className="btn" onClick={() => this.handleFilter("Dynamic")}>
-          Dynamic
-        </button>
-
-        {this.portfolioItems()}
+      <div className="homepage-wrapper">
+        <div className="filter-links">
+          <button className="btn" onClick={() => this.handleFilter("Markup")}>
+            Markup
+          </button>
+          <button className="btn" onClick={() => this.handleFilter("Styling")}>
+            Styling
+          </button>
+          <button className="btn" onClick={() => this.handleFilter("Dynamic")}>
+            Dynamic
+          </button>
+          <button
+            className="btn"
+            onClick={() => this.handleFilter("CLEAR_FILTERS")}
+          >
+            All
+          </button>
+        </div>
+        <div className="portfolio-items-wrapper">{this.portfolioItems()}</div>
       </div>
     );
   }

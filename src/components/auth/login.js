@@ -36,7 +36,6 @@ export default class Login extends Component {
       )
       .then(response => {
         if (response.data.status === "created") {
-          console.log(response);
           this.props.handleSuccessfulAuth();
         } else {
           this.setState({ errorText: "Incorrect email or password" });
