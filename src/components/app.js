@@ -46,7 +46,6 @@ export default class App extends Component {
         withCredentials: true
       })
       .then(response => {
-        console.log(response);
         const loggedIn = response.data.logged_in;
         const loggedInStatus = this.state.loggedInStatus;
 
