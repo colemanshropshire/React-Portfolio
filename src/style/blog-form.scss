@@ -9,6 +9,33 @@
   }
 
   .image-uploaders {
+    .dropzone {
+      background-color: $grey;
+      border-color: $dark-charcoal;
+      color: $accent-text;
+
+      .dz-preview {
+        background: transparent;
+        .dz-remove {
+          text-decoration: none;
+          color: $warning;
+        }
+      }
+    }
+
+    .image-removal-link {
+      display: flex;
+      justify-content: center;
+      a {
+        font-weight: 900;
+        color: $warning;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        &:hover {
+          color: darkred;
+        }
+      }
+    }
     @include base-grid();
     grid-template-columns: 200px;
   }

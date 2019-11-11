@@ -5,7 +5,7 @@
   font-weight: 500;
   border: 1px solid transparent;
   transition: all 500ms ease-in-out;
-  background-color: $charcoal;
+  background-color: $dark-charcoal;
   color: #b4aea2;
 
   &:active,
@@ -15,7 +15,7 @@
 
   &:hover {
     background-color: $dark-charcoal;
-    box-shadow: inset 0px 0px 25px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 30px -10px rgba(0, 0, 0, 0.5);
   }
 }
 

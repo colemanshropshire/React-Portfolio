@@ -8,6 +8,12 @@
 
     .btn {
       width: 100%;
+      background-color: $charcoal;
+
+      &:hover {
+        background-color: $dark-charcoal;
+        box-shadow: inset 0px 0px 25px -10px rgba(0, 0, 0, 0.5);
+      }
     }
   }
 }
