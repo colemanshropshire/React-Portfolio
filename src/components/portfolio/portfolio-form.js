@@ -42,9 +42,7 @@ export default class PortfolioForm extends Component {
   deleteImage(imageType) {
     axios
       .delete(
-        `https://api.devcamp.space/portfolio/delete-portfolio-image/${
-          this.state.id
-        }?image_type=${imageType}`,
+        `https://api.devcamp.space/portfolio/delete-portfolio-image/${this.state.id}?image_type=${imageType}`,
         { withCredentials: true }
       )
       .then(response => {
@@ -110,7 +108,7 @@ export default class PortfolioForm extends Component {
 
   componentConfig() {
     return {
-      iconFiletypes: [".jpg", ".png", ".jpeg", ".jfif"],
+      iconFiletypes: [".jpg", ".png"],
       showFiletypeIcon: true,
       postUrl: "https:/httpbin.org/post"
     };

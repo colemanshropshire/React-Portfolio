@@ -46,6 +46,15 @@
       &:hover {
         color: $base-accent;
       }
+
+      svg {
+        color: $warning;
+        transition: 0.5s ease-in-out;
+
+        &:hover {
+          color: darkred;
+        }
+      }
     }
 
     h1 {

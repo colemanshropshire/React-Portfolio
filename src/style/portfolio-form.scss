@@ -8,9 +8,33 @@
     margin-bottom: 0px;
   }
 
+  select {
+    border-color: $base;
+    color: grey;
+    transition: 0.5s ease-in-out;
+
+    &:focus {
+      border-color: $base-accent;
+    }
+  }
+
   .image-uploaders {
     @include base-grid();
     grid-template-columns: 200px 200px 200px;
+
+    .dropzone {
+      background-color: $grey;
+      border-color: $dark-charcoal;
+      color: $accent-text;
+
+      .dz-preview {
+        background: transparent;
+        .dz-remove {
+          text-decoration: none;
+          color: $warning;
+        }
+      }
+    }
 
     .portfolio-manager-image-wrapper {
       img {
@@ -29,6 +53,13 @@
           cursor: pointer;
         }
       }
+    }
+  }
+
+  button {
+    &:hover {
+      background-color: $charcoal;
+      box-shadow: 10px 10px 30px -10px rgba(0, 0, 0, 0.5);
     }
   }
 }
