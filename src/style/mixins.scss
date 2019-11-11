@@ -5,8 +5,8 @@
   font-weight: 500;
   border: 1px solid transparent;
   transition: all 500ms ease-in-out;
-  background-color: $teal;
-  color: white;
+  background-color: $charcoal;
+  color: #b4aea2;
 
   &:active,
   &:focus {
@@ -14,7 +14,8 @@
   }
 
   &:hover {
-    background-color: $dark-teal;
+    background-color: $dark-charcoal;
+    box-shadow: inset 0px 0px 25px -10px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -27,7 +28,7 @@
     border-top: 0;
     border-right: 0;
     border-left: 0;
-    border-bottom: 1px solid $teal;
+    border-bottom: 1px solid $base;
     background-color: transparent;
     transition: 500ms all ease-in-out;
     font-size: 1.1em;
@@ -35,7 +36,7 @@
 
     &:focus {
       outline: none;
-      border-bottom: 1px solid $dark-teal;
+      border-bottom: 1px solid $base-accent;
     }
   }
 }

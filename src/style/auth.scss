@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $offwhite;
+    background-color: #222222;
 
     .auth-form-wrapper {
       @include input-element();
@@ -22,10 +22,20 @@
       .form-group {
         display: flex;
 
+        input {
+          color: $offwhite;
+        }
+
         svg {
           font-size: 2em;
-          color: $teal;
+          color: $accent-text;
           margin-right: 15px;
+        }
+      }
+      .btn {
+        &:hover {
+          background-color: $charcoal;
+          box-shadow: 10px 10px 30px -10px rgba(0, 0, 0, 0.5);
         }
       }
     }

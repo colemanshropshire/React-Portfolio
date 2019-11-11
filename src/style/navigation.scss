@@ -3,16 +3,17 @@
   justify-content: space-between;
   padding: 30px;
   text-transform: uppercase;
+  background-color: $base;
 
   .right-side {
     a {
       margin-left: 15px;
       cursor: pointer;
-      color: $teal;
+      color: $warning;
       transition: 500ms ease-in-out;
 
       &:hover {
-        color: $dark-teal;
+        color: darkred;
       }
     }
   }
@@ -29,17 +30,19 @@
       font-size: 0.9rem;
 
       a {
-        color: $grey;
+        color: darkgrey;
         text-decoration: none;
+        transition: 0.5s ease-in-out;
+        border-bottom: 1px solid transparent;
         &:hover {
-          border-bottom: 1px solid black;
-          color: black;
+          border-bottom: 1px solid grey;
+          color: grey;
         }
       }
 
       .nav-link-active {
-        border-bottom: 1px solid black;
-        color: black;
+        border-bottom: 1px solid $accent-text;
+        color: $accent-text;
       }
     }
   }
