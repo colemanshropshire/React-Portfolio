@@ -12,7 +12,7 @@ export default class BlogForm extends Component {
     this.state = {
       id: "",
       title: "",
-      blog_status: "",
+      blog_status: "draft",
       content: "",
       featured_image: "",
       apiUrl:
@@ -118,7 +118,7 @@ export default class BlogForm extends Component {
 
         this.setState({
           title: "",
-          blog_status: "",
+          blog_status: "draft",
           content: "",
           featured_image: ""
         });
@@ -155,13 +155,15 @@ export default class BlogForm extends Component {
             placeholder="Blog Title"
             value={this.state.title}
           />
-          <input
-            type="text"
-            onChange={this.handleChange}
+          <select
+            className="select-element"
             name="blog_status"
-            placeholder="Blog Status"
             value={this.state.blog_status}
-          />
+            onChange={this.handleChange}
+          >
+            <option value="draft">draft</option>
+            <option value="published">published</option>
+          </select>
         </div>
 
         <div className="one-coulumn">

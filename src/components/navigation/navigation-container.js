@@ -32,7 +32,15 @@ const navigationComponent = props => {
 
   return (
     <div className="nav-wrapper">
-      <div className="left-side">
+      <div className="top">
+        Coleman Shropshire
+        {props.loggedInStatus === "LOGGED_IN" ? (
+          <a onClick={handSignOut}>
+            <FontAwesomeIcon icon="sign-out-alt" />
+          </a>
+        ) : null}
+      </div>
+      <div className="bottom">
         <div className="nav-link-wrapper">
           <NavLink exact to="/" activeClassName="nav-link-active">
             Home
@@ -56,14 +64,6 @@ const navigationComponent = props => {
         {props.loggedInStatus === "LOGGED_IN"
           ? dynamicLink("/portfolio-manager", "Portfolio Manager")
           : null}
-      </div>
-      <div className="right-side">
-        Coleman Shropshire
-        {props.loggedInStatus === "LOGGED_IN" ? (
-          <a onClick={handSignOut}>
-            <FontAwesomeIcon icon="sign-out-alt" />
-          </a>
-        ) : null}
       </div>
     </div>
   );

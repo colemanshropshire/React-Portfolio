@@ -80,7 +80,7 @@ export default class App extends Component {
     return (
       <div className="container">
         <Router>
-          <div>
+          <div className="main">
             <NavigationContainer
               loggedInStatus={this.state.loggedInStatus}
               handleSuccessfulLogout={this.handleSuccessfulLogout}

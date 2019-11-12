@@ -7,7 +7,15 @@
   input {
     margin-bottom: 0px;
   }
+  select {
+    border-color: $base;
+    color: grey;
+    transition: 0.5s ease-in-out;
 
+    &:focus {
+      border-color: $base-accent;
+    }
+  }
   .image-uploaders {
     .dropzone {
       background-color: $grey;
