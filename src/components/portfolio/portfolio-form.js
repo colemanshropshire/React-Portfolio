@@ -168,7 +168,7 @@ export default class PortfolioForm extends Component {
           name: "",
           description: "",
           category: "devExp",
-          postion: "",
+          position: "",
           url: "",
           thumb_image: "",
           banner_image: "",
