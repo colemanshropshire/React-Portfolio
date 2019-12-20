@@ -15,7 +15,24 @@
     align-items: center;
 
     h1 {
-      font-size: 3em;
+      font-size: 2em;
+    }
+
+    #bio {
+      text-indent: 3em;
+      text-align: justify;
+      line-height: 1.5em;
+      font-size: 1.5em;
+    }
+
+    a {
+      font-size: 2rem;
+      color: $base;
+      text-decoration: none;
+      transition: 0.5s cubic-bezier(0, 0.78, 0.93, 0.52);
+      &:hover {
+        color: $blue;
+      }
     }
 
     .contact-info {

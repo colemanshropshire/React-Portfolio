@@ -8,9 +8,7 @@ body {
 .main {
   display: grid;
   grid-template-columns: calc(8vw) calc(92vw);
-  .nav-wrapper {
-    height: 100vh;
-  }
+  height: 100vh;
 }
 
 ::-webkit-scrollbar {
