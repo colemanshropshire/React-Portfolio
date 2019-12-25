@@ -41,6 +41,23 @@
       .homepage-wrapper > .portfolio-items-wrapper {
         grid-template-columns: 1fr;
       }
+      .content-page-wrapper {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        .left-column {
+          height: 45vh;
+        }
+        .right-column {
+          justify-content: flex-start;
+          padding: 0 5%;
+          height: 50vh;
+          #bio {
+            text-align: left;
+            text-indent: 1.5em;
+          }
+        }
+      }
     }
   }
 }
