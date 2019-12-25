@@ -1,7 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// about page where have a photo on the left hand side and then I have the content on the right hand side a different photo
 import mailImg from "../../../static/assets/images/contact/mail_box.jpg";
 
 export default function() {

@@ -21,12 +21,24 @@ export default class App extends Component {
     Icons();
 
     this.state = {
+      navDropdownState: "hide",
+      contentState: "",
       loggedInStatus: "NOT_LOGGED_IN"
     };
 
     this.handleSuccessfulLogin = this.handleSuccessfulLogin.bind(this);
     this.handleUnsuccessfulLogin = this.handleUnsuccessfulLogin.bind(this);
     this.handleSuccessfulLogout = this.handleSuccessfulLogout.bind(this);
+    this.handleDropdownOpen = this.handleDropdownOpen.bind(this);
+    this.handleDropdownClose = this.handleDropdownClose.bind(this);
+  }
+
+  handleDropdownClose() {
+    this.setState({ navDropdownState: "hide", contentState: "" });
+  }
+
+  handleDropdownOpen() {
+    this.setState({ navDropdownState: "", contentState: "hide" });
   }
 
   handleSuccessfulLogin() {
@@ -82,51 +94,58 @@ export default class App extends Component {
         <Router>
           <div className="main">
             <NavigationContainer
+              dropdownState={this.state.navDropdownState}
+              dropdownOpen={this.handleDropdownOpen}
+              dropdownClose={this.handleDropdownClose}
               loggedInStatus={this.state.loggedInStatus}
               handleSuccessfulLogout={this.handleSuccessfulLogout}
             />
+            <div className="page-content" id={this.state.contentState}>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route
+                  path="/auth"
+                  render={props => (
+                    <Auth
+                      {...props}
+                      handleSuccessfulLogin={this.handleSuccessfulLogin}
+                      handleUnSuccessfulLogin={this.handleUnSuccessfulLogin}
+                    />
+                  )}
+                />
+                <Route path="/about-me" component={About} />
+                <Route path="/contact" component={Contact} />
 
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route
-                path="/auth"
-                render={props => (
-                  <Auth
-                    {...props}
-                    handleSuccessfulLogin={this.handleSuccessfulLogin}
-                    handleUnSuccessfulLogin={this.handleUnSuccessfulLogin}
-                  />
-                )}
-              />
-              <Route path="/about-me" component={About} />
-              <Route path="/contact" component={Contact} />
+                <Route
+                  path="/blog"
+                  render={props => (
+                    <Blog
+                      {...props}
+                      loggedInStatus={this.state.loggedInStatus}
+                    />
+                  )}
+                />
 
-              <Route
-                path="/blog"
-                render={props => (
-                  <Blog {...props} loggedInStatus={this.state.loggedInStatus} />
-                )}
-              />
-
-              <Route
-                path="/b/:slug"
-                render={props => (
-                  <BlogDetail
-                    {...props}
-                    loggedInStatus={this.state.loggedInStatus}
-                  />
-                )}
-              />
-              {this.state.loggedInStatus === "LOGGED_IN"
-                ? this.authorizedPages()
-                : null}
-              <Route
-                exact
-                path="/portfolio/:slug"
-                component={PortfolioDetail}
-              />
-              <Route component={NoMatch} />
-            </Switch>
+                <Route
+                  path="/b/:slug"
+                  render={props => (
+                    <BlogDetail
+                      {...props}
+                      loggedInStatus={this.state.loggedInStatus}
+                    />
+                  )}
+                />
+                {this.state.loggedInStatus === "LOGGED_IN"
+                  ? this.authorizedPages()
+                  : null}
+                <Route
+                  exact
+                  path="/portfolio/:slug"
+                  component={PortfolioDetail}
+                />
+                <Route component={NoMatch} />
+              </Switch>
+            </div>
           </div>
         </Router>
       </div>

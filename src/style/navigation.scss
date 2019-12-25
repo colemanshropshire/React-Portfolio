@@ -1,56 +1,62 @@
-.nav-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 5px;
-  padding-top: 30px;
-  padding-right: 5px;
-  text-transform: uppercase;
-  background-color: $base;
+.nav-bar {
   height: calc(100vh-30px);
-  flex-direction: column;
+  .mobile-dropdown {
+    display: none;
+  }
+  .nav-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 5px;
+    padding-top: 30px;
+    padding-right: 5px;
+    text-transform: uppercase;
+    background-color: $base;
+    flex-direction: column;
+    height: 100%;
 
-  .top {
-    margin-bottom: calc(12vh);
-    font-size: 1.2rem;
-    text-align: right;
-    a {
-      cursor: pointer;
-      color: $warning;
-      transition: 500ms ease-in-out;
+    .top {
+      margin-bottom: calc(12vh);
+      font-size: 1.2rem;
+      text-align: right;
+      a {
+        cursor: pointer;
+        color: $warning;
+        transition: 500ms ease-in-out;
 
-      &:hover {
-        color: darkred;
+        &:hover {
+          color: darkred;
+        }
       }
     }
-  }
 
-  .bottom {
-    display: flex;
-    height: 24px;
-    flex-direction: column;
+    .bottom {
+      display: flex;
+      height: 24px;
+      flex-direction: column;
 
-    .nav-link-wrapper {
-      text-align: center;
-      height: 22px;
-      border-bottom: 1px solid transparent;
-      transition: 500ms ease-in-out;
-      margin-bottom: 25px;
-      font-size: 1rem;
-
-      a {
-        color: darkgrey;
-        text-decoration: none;
-        transition: 0.25s ease-in-out;
+      .nav-link-wrapper {
+        text-align: center;
+        height: 22px;
         border-bottom: 1px solid transparent;
-        &:hover {
+        transition: 500ms ease-in-out;
+        margin-bottom: 25px;
+        font-size: 1rem;
+
+        a {
+          color: darkgrey;
+          text-decoration: none;
+          transition: 0.25s ease-in-out;
+          border-bottom: 1px solid transparent;
+          &:hover {
+            border-bottom: 1px solid $accent-text;
+            color: $accent-text;
+          }
+        }
+
+        .nav-link-active {
           border-bottom: 1px solid $accent-text;
           color: $accent-text;
         }
-      }
-
-      .nav-link-active {
-        border-bottom: 1px solid $accent-text;
-        color: $accent-text;
       }
     }
   }

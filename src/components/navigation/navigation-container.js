@@ -31,39 +31,52 @@ const navigationComponent = props => {
   };
 
   return (
-    <div className="nav-wrapper">
-      <div className="top">
-        Coleman Shropshire
-        {props.loggedInStatus === "LOGGED_IN" ? (
-          <a onClick={handSignOut}>
-            <FontAwesomeIcon icon="sign-out-alt" />
-          </a>
-        ) : null}
+    <div className="nav-bar">
+      <div className="mobile-dropdown">
+        {props.dropdownState === "hide" ? (
+          <button onClick={props.dropdownOpen} className="dropdown-btn">
+            <FontAwesomeIcon icon="bars" />
+          </button>
+        ) : (
+          <button onClick={props.dropdownClose} className="dropdown-btn">
+            <FontAwesomeIcon icon="window-close" />
+          </button>
+        )}
       </div>
-      <div className="bottom">
-        <div className="nav-link-wrapper">
-          <NavLink exact to="/" activeClassName="nav-link-active">
-            Home
-          </NavLink>
+      <div className="nav-wrapper" id={props.dropdownState}>
+        <div className="top">
+          Coleman Shropshire
+          {props.loggedInStatus === "LOGGED_IN" ? (
+            <a onClick={handSignOut}>
+              <FontAwesomeIcon icon="sign-out-alt" />
+            </a>
+          ) : null}
         </div>
-        <div className="nav-link-wrapper">
-          <NavLink to="/about-me" activeClassName="nav-link-active">
-            About
-          </NavLink>
+        <div className="bottom">
+          <div className="nav-link-wrapper">
+            <NavLink exact to="/" activeClassName="nav-link-active">
+              Home
+            </NavLink>
+          </div>
+          <div className="nav-link-wrapper">
+            <NavLink to="/about-me" activeClassName="nav-link-active">
+              About
+            </NavLink>
+          </div>
+          <div className="nav-link-wrapper">
+            <NavLink to="/contact" activeClassName="nav-link-active">
+              Contact
+            </NavLink>
+          </div>
+          <div className="nav-link-wrapper">
+            <NavLink to="/blog" activeClassName="nav-link-active">
+              Blog
+            </NavLink>
+          </div>
+          {props.loggedInStatus === "LOGGED_IN"
+            ? dynamicLink("/portfolio-manager", "Portfolio Manager")
+            : null}
         </div>
-        <div className="nav-link-wrapper">
-          <NavLink to="/contact" activeClassName="nav-link-active">
-            Contact
-          </NavLink>
-        </div>
-        <div className="nav-link-wrapper">
-          <NavLink to="/blog" activeClassName="nav-link-active">
-            Blog
-          </NavLink>
-        </div>
-        {props.loggedInStatus === "LOGGED_IN"
-          ? dynamicLink("/portfolio-manager", "Portfolio Manager")
-          : null}
       </div>
     </div>
   );
