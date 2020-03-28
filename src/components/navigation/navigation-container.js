@@ -54,22 +54,39 @@ const navigationComponent = props => {
         </div>
         <div className="bottom">
           <div className="nav-link-wrapper">
-            <NavLink exact to="/" activeClassName="nav-link-active">
+            <NavLink
+              exact
+              to="/"
+              activeClassName="nav-link-active"
+              onClick={props.dropdownClose}
+            >
               Home
             </NavLink>
           </div>
           <div className="nav-link-wrapper">
-            <NavLink to="/about-me" activeClassName="nav-link-active">
+            <NavLink
+              to="/about-me"
+              activeClassName="nav-link-active"
+              onClick={props.dropdownClose}
+            >
               About
             </NavLink>
           </div>
           <div className="nav-link-wrapper">
-            <NavLink to="/contact" activeClassName="nav-link-active">
+            <NavLink
+              to="/contact"
+              activeClassName="nav-link-active"
+              onClick={props.dropdownClose}
+            >
               Contact
             </NavLink>
           </div>
           <div className="nav-link-wrapper">
-            <NavLink to="/blog" activeClassName="nav-link-active">
+            <NavLink
+              to="/blog"
+              activeClassName="nav-link-active"
+              onClick={props.dropdownClose}
+            >
               Blog
             </NavLink>
           </div>

@@ -2,6 +2,12 @@
   #hide {
     display: none;
   }
+  .ReactModalPortal > .ReactModal__Overlay {
+    .ReactModal__Content,
+    .ReactModal__Content--after-open {
+      width: 80%;
+    }
+  }
   body > .app-wrapper > .container > .main {
     display: flex;
     flex-direction: column;
@@ -17,10 +23,11 @@
         background-color: $base;
         color: $accent-text;
         font-size: 1.25em;
-        transition: 0.5s ease-in-out;
       }
     }
-    .nav-bar > .nav-wrapper {
+  }
+  .nav-bar {
+    .nav-wrapper {
       padding-top: 5vh;
       height: 90vh;
       .top {
@@ -36,27 +43,39 @@
         }
       }
     }
+  }
 
-    .page-content {
-      .homepage-wrapper > .portfolio-items-wrapper {
-        grid-template-columns: 1fr;
+  .page-content {
+    .homepage-wrapper > .portfolio-items-wrapper {
+      grid-template-columns: 1fr;
+    }
+    .content-page-wrapper {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      .left-column {
+        height: 45vh;
       }
-      .content-page-wrapper {
-        height: auto;
+      .right-column {
+        justify-content: flex-start;
+        padding: 0 5%;
+        height: 50vh;
+        #bio {
+          text-align: left;
+          text-indent: 1.5em;
+        }
+      }
+    }
+    .blog-container {
+      .new-blog-link {
+        position: relative;
+        width: 90%;
+        right: 0;
         display: flex;
-        flex-direction: column;
-        .left-column {
-          height: 45vh;
-        }
-        .right-column {
-          justify-content: flex-start;
-          padding: 0 5%;
-          height: 50vh;
-          #bio {
-            text-align: left;
-            text-indent: 1.5em;
-          }
-        }
+        justify-content: center;
+      }
+      .content-container {
+        width: 90%;
       }
     }
   }

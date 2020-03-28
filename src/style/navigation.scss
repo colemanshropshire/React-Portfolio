@@ -18,6 +18,7 @@
       margin-bottom: calc(12vh);
       font-size: 1.2rem;
       text-align: right;
+      display: grid;
       a {
         cursor: pointer;
         color: $warning;
