@@ -13,7 +13,7 @@ export default function() {
 
       <div className="right-column">
         <h1>
-          Hi, I'm Coleman Shropshire. I am a 17 year old studying developer in
+          Hi, I'm Coleman Shropshire. I am a 19 year old studying developer in
           Provo Utah.
         </h1>
         <p id="bio">
